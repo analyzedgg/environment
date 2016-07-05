@@ -1,0 +1,4 @@
+frontend/content/*
+
+backend/*.jar
+backend/prod.conf
