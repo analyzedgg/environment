@@ -2,3 +2,5 @@ frontend/content/*
 
 backend/*.jar
 backend/prod.conf
+
+couchdb/data

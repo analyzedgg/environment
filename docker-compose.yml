@@ -15,5 +15,7 @@ backend:
 couchdb:
   build: ./couchdb
   container_name: couchdb
+  volumes:
+   - ./couchdb/data:/usr/local/var/lib/couchdb
   ports:
    - "5984:5984"
