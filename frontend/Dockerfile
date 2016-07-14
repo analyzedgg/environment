@@ -1,3 +1,3 @@
 FROM nginx:latest
-COPY backend.conf /etc/nginx/conf.d/
+COPY default.conf /etc/nginx/conf.d/default.conf
 COPY content /usr/share/nginx/html
