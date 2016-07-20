@@ -1,23 +1,27 @@
-frontend:
-  build: ./frontend
-  container_name: frontend
-  ports:
-    - "80:80"
-  links:
-    - backend
+version: '2'
+services:
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+    links:
+      - backend
 
-backend:
-  build: ./backend
-  container_name: backend
-  links:
-    - couchdb
-  ports:
-   - "8080:8080"
+  backend:
+    build: ./backend
+    container_name: backend
+    links:
+      - couchdb
+    ports:
+      - "8080:8080"
 
-couchdb:
-  build: ./couchdb
-  container_name: couchdb
-  volumes:
-   - ./couchdb/data:/usr/local/var/lib/couchdb
-  ports:
-   - "5984:5984"
+  couchdb:
+    build: ./couchdb
+    container_name: couchdb
+    volumes:
+      - ./couchdb/data:/usr/local/var/lib/couchdb
+    ports:
+      - "5984:5984"
