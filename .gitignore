@@ -4,3 +4,6 @@ backend/*.jar
 backend/prod.conf
 
 couchdb/data
+
+deploy/**/*.jar
+deploy/**/*.zip
